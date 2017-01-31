@@ -87,6 +87,11 @@ def main():
         cur_tag = this_tag
         cur_tag_count += 1
 
+    # Check Last Tag:
+    this_pos = find_pos(cur_tag_count, top10w)
+    if this_pos != -1:
+        adjust_top10(cur_tag, this_pos, cur_tag_count, top10, top10w)
+
     # Sort and Print List
     for i in range(10):
         writer.writerow([top10[i], top10w[i]])
