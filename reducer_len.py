@@ -51,7 +51,7 @@ def main():
 
         # Set and Update
         cur_parent = this_par
-        if this_type == "Q":
+        if this_type.lower() == "question":
             cur_parent_len = this_len
         else:
             cur_response_avg += this_len
