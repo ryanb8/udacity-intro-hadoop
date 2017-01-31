@@ -1,4 +1,6 @@
-#!/usr/local/bin/python3.6
+#!/usr/bin/python
+
+###### !/usr/local/bin/python3.6
 # For some reason, on the virtual machine supplied by Udacity, #!/usr/bin
 # and #!/usr/bin/env do not have python executables... --> hard coded locations
 """
