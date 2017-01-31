@@ -41,13 +41,13 @@ def main():
 
         if not (cur_author is None) and this_auth != cur_author:
             # calc max
-            max_posts = max(hour_counter)
-            max_posts = [i for (i, x) in enumerate(hour_counter) if x ==
-                         max_posts]
+            max_hour = max(hour_counter)
+            max_hour_indexs = [i for (i, x) in enumerate(hour_counter) if x ==
+                         max_hour]
 
             # print em
-            for i in max_posts:
-                writer.writerow([cur_author, max_posts[i]])
+            for i in max_hour_indexs:
+                writer.writerow([cur_author, i])
 
             # reset em
             hour_counter = [0] * 24
@@ -56,10 +56,16 @@ def main():
         cur_author = this_auth
         hour_counter[this_hour] += 1
 
-    # Print last one
+    # Calc & Print last one
     if not (cur_author is None):
-        for i in max_posts:
-            writer.writerow([cur_author, max_posts[i]])
+        # calc max
+        max_hour = max(hour_counter)
+        max_hour_indexs = [i for (i, x) in enumerate(hour_counter) if x ==
+                           max_hour]
+
+        # print em
+        for i in max_hour_indexs:
+            writer.writerow([cur_author, i])
 
 
 if __name__ == "__main__":
