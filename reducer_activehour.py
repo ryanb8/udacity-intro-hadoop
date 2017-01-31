@@ -57,8 +57,9 @@ def main():
         hour_counter[this_hour] += 1
 
     # Print last one
-    for i in max_posts:
-        writer.writerow([cur_author, max_posts[i]])
+    if not (cur_author is None):
+        for i in max_posts:
+            writer.writerow([cur_author, max_posts[i]])
 
 
 if __name__ == "__main__":
