@@ -50,7 +50,7 @@ def main():
     for line in reader:
         if len(line) == 19:  # Node (id = first)
             this_auth = [line[author_val]]
-            this_time = re.findall(dt_re, line[dt_val])[4]
+            this_time = [re.findall(dt_re, line[dt_val])[0][4]]
             writer.writerow(this_auth + this_time)
 
 if __name__ == "__main__":
