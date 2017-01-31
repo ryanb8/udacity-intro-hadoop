@@ -37,7 +37,11 @@ def main():
         this_len = int(float(line[2]))
 
         if not (cur_parent is None) and this_par != cur_parent:
-            cur_response_avg = cur_response_avg/cur_response_count
+            if cur_response_count == 0:
+                cur_response_avg = 0
+            else:
+                cur_response_avg = cur_response_avg/cur_response_count
+
             writer.writerow([cur_parent, cur_parent_len, cur_response_avg])
 
             # reset em
@@ -55,7 +59,11 @@ def main():
 
     # Calc & Print last one
     if not (cur_parent is None):
-        cur_response_avg = cur_response_avg / cur_response_count
+        if cur_response_count == 0:
+            cur_response_avg = 0
+        else:
+            cur_response_avg = cur_response_avg / cur_response_count
+
         writer.writerow([cur_parent, cur_parent_len, cur_response_avg])
 
 
